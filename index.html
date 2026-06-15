@@ -1,1 +1,215 @@
-<h1>Billy Li Xinji</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billy Li | Portfolio</title>
+<meta name="description" content="Billy Li - Student, Programmer, Researcher, Builder">
+<style>
+:root{
+--bg:#050505;--card:rgba(255,255,255,.06);--text:#f5f5f5;
+--muted:#a0a0a0;--blue:#4f8cff;--purple:#8b5cf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+#progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--purple));z-index:999;width:0}
+.bg{position:fixed;inset:0;background:
+radial-gradient(circle at 20% 20%,rgba(79,140,255,.2),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(139,92,246,.2),transparent 30%);z-index:-1}
+nav{position:fixed;top:0;width:100%;backdrop-filter:blur(12px);padding:18px 8%;display:flex;justify-content:space-between;z-index:100}
+nav a{color:white;text-decoration:none;margin-left:20px}
+section{padding:90px 8%}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.hero h1{font-size:5rem}
+.typing{color:var(--blue);font-size:1.4rem;margin:10px 0}
+.hero p{max-width:600px;color:var(--muted);line-height:1.8}
+.btn{display:inline-block;margin-top:20px;padding:14px 24px;border-radius:12px;background:linear-gradient(90deg,var(--blue),var(--purple));color:white;text-decoration:none}
+.avatar{width:280px;height:280px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:var(--card);backdrop-filter:blur(10px);padding:24px;border-radius:20px;border:1px solid rgba(255,255,255,.08);transition:.3s}
+.card:hover{transform:translateY(-6px)}
+h2{font-size:2.4rem;margin-bottom:30px}
+.counter{font-size:2rem;color:var(--blue);font-weight:bold}
+.skills .bar{height:8px;background:#222;border-radius:999px;margin-top:8px}
+.skills .fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));border-radius:999px}
+.timeline{border-left:2px solid var(--blue);padding-left:24px}
+.timeline .item{margin-bottom:30px}
+.gallery{columns:3 250px;gap:16px}
+.gallery div{height:200px;background:var(--card);border-radius:18px;margin-bottom:16px;padding:20px}
+footer{text-align:center;padding:40px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.show{opacity:1;transform:none}
+#top{position:fixed;bottom:20px;right:20px;padding:12px 16px;border:none;border-radius:50%;background:var(--blue);color:white}
+@media(max-width:900px){.hero{flex-direction:column;text-align:center}.hero h1{font-size:3rem}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="bg"></div>
+
+<nav>
+<div><b>Billy Li</b></div>
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#research">Research</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+<div>
+<h1>Billy Li</h1>
+<div class="typing" id="typing"></div>
+<p>Grade 10 student passionate about Computer Science, Artificial Intelligence, Algorithms, Research, and Entrepreneurship. Building technology that transforms ideas into impact.</p>
+<a class="btn" href="#projects">View Projects</a>
+</div>
+<div class="avatar">👨‍💻</div>
+</section>
+
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<div class="grid">
+<div class="card"><h3>Programming Journey</h3><p>Started programming in elementary school and developed a passion for algorithms and problem solving.</p></div>
+<div class="card"><h3>Research Interests</h3><p>AI, Machine Learning, Computer Vision, Large Language Models, and Education Technology.</p></div>
+<div class="card"><h3>Future Goals</h3><p>Pursue Computer Science at a top university and build technology with global impact.</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Highlights</h2>
+<div class="grid">
+<div class="card"><div class="counter" data-target="10">0</div><p>Years Learning Programming</p></div>
+<div class="card"><div class="counter" data-target="4">0</div><p>Programming Awards</p></div>
+<div class="card"><div class="counter" data-target="10">0</div><p>Technical Projects</p></div>
+<div class="card"><div class="counter" data-target="1000">0</div><p>Learning Hours</p></div>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<h2>Featured Projects</h2>
+<div class="grid">
+<div class="card"><h3>AI Research Assistant</h3><p>AI-powered academic research helper.</p></div>
+<div class="card"><h3>Algorithm Visualizer</h3><p>Interactive visualization of sorting and graph algorithms.</p></div>
+<div class="card"><h3>Educational Platform</h3><p>Learning tools for students.</p></div>
+<div class="card"><h3>Competitive Programming Toolkit</h3><p>Training platform for algorithmic challenges.</p></div>
+<div class="card"><h3>Machine Learning Project</h3><p>Predictive analytics and data modeling.</p></div>
+<div class="card"><h3>Portfolio Website</h3><p>Modern personal branding platform.</p></div>
+</div>
+</section>
+
+<section id="research" class="reveal">
+<h2>Research & Intellectual Interests</h2>
+<div class="grid">
+<div class="card">Artificial Intelligence</div>
+<div class="card">Large Language Models</div>
+<div class="card">Computer Vision</div>
+<div class="card">Algorithms</div>
+<div class="card">Human Computer Interaction</div>
+<div class="card">Education Technology</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Achievements</h2>
+<div class="grid">
+<div class="card">🏆 USACO Competitor</div>
+<div class="card">🥈 CSP-J National Award</div>
+<div class="card">🥈 CSP-S National Award</div>
+<div class="card">🎖 Provincial Programming Award</div>
+<div class="card">⛳ Provincial Golf Achievement</div>
+<div class="card">📚 Research Presentations</div>
+</div>
+</section>
+
+<section class="skills reveal">
+<h2>Technical Skills</h2>
+<div class="grid">
+<div class="card">C++<div class="bar"><div class="fill" style="width:95%"></div></div></div>
+<div class="card">Python<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div class="card">JavaScript<div class="bar"><div class="fill" style="width:80%"></div></div></div>
+<div class="card">Machine Learning<div class="bar"><div class="fill" style="width:75%"></div></div></div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Leadership & Experience</h2>
+<div class="timeline">
+<div class="item"><h3>Grade 3</h3><p>Started programming.</p></div>
+<div class="item"><h3>Middle School</h3><p>Competitive programming training.</p></div>
+<div class="item"><h3>High School</h3><p>USACO, CSP-J, CSP-S, research projects.</p></div>
+<div class="item"><h3>Future</h3><p>AI research and entrepreneurship.</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Gallery</h2>
+<div class="gallery">
+<div>Programming Competitions</div>
+<div>Research Activities</div>
+<div>Presentations</div>
+<div>Golf</div>
+<div>Photography</div>
+<div>School Activities</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Insights</h2>
+<div class="grid">
+<div class="card">What Competitive Programming Taught Me</div>
+<div class="card">Understanding AI Beyond the Hype</div>
+<div class="card">Building My First Research Project</div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<h2>Contact</h2>
+<div class="grid">
+<div class="card">Email: your@email.com</div>
+<div class="card">GitHub: github.com/yourname</div>
+<div class="card">LinkedIn: linkedin.com/in/yourname</div>
+<div class="card">Website: yourdomain.com</div>
+</div>
+</section>
+
+<footer>
+<p>"Building technology that transforms ideas into impact."</p>
+<p>© 2026 Billy Li</p>
+</footer>
+
+<button id="top">↑</button>
+
+<script>
+const words=["Student","Programmer","Researcher","Builder"];
+let i=0,j=0,del=false;
+setInterval(()=>{
+let t=document.getElementById("typing");
+if(!del){t.textContent=words[i].slice(0,++j);if(j===words[i].length)del=true;}
+else{t.textContent=words[i].slice(0,--j);if(j===0){del=false;i=(i+1)%words.length;}}
+},120);
+
+window.addEventListener("scroll",()=>{
+let h=document.documentElement;
+document.getElementById("progress").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+"%";
+});
+
+const obs=new IntersectionObserver(es=>{
+es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")});
+});
+document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
+
+document.querySelectorAll(".counter").forEach(c=>{
+let target=+c.dataset.target,n=0;
+let iv=setInterval(()=>{
+n+=Math.max(1,Math.ceil(target/50));
+if(n>=target){n=target;clearInterval(iv);}
+c.textContent=n+"+";
+},30);
+});
+
+document.getElementById("top").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>
