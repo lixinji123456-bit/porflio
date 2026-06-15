@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050816" />
   <title>Billy Li | Portfolio</title>
-  <meta name="description" content="Billy Li — Grade 10 student, programmer, researcher, builder. Portfolio for university applications." />
+  <meta name="description" content="Billy Li — Grade 10 student, programmer, researcher, and builder. A modern portfolio for university applications." />
   <meta property="og:title" content="Billy Li | Portfolio" />
-  <meta property="og:description" content="A modern portfolio showcasing projects, research interests, achievements, and creative work." />
+  <meta property="og:description" content="A polished, single-file portfolio showcasing projects, awards, research interests, and creative work." />
   <meta property="og:type" content="website" />
   <style>
     :root {
       --bg: #050816;
-      --bg-2: #070b1f;
+      --bg2: #070b1f;
       --panel: rgba(255,255,255,0.06);
-      --panel-strong: rgba(255,255,255,0.10);
+      --panel2: rgba(255,255,255,0.10);
       --border: rgba(255,255,255,0.10);
       --text: #f5f7ff;
       --muted: rgba(245,247,255,0.72);
@@ -45,7 +45,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
+    button { font: inherit; }
     ::selection { background: rgba(105,167,255,0.28); }
 
     .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
@@ -57,10 +57,9 @@
     }
 
     .noise {
-      position: fixed; inset: 0; pointer-events: none; opacity: 0.11; z-index: -1;
+      position: fixed; inset: 0; pointer-events: none; opacity: 0.10; z-index: -1;
       background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.35) 1px, transparent 0);
-      background-size: 18px 18px;
-      mix-blend-mode: soft-light;
+      background-size: 18px 18px; mix-blend-mode: soft-light;
     }
 
     .orb {
@@ -95,9 +94,7 @@
       background: linear-gradient(135deg, rgba(105,167,255,0.95), rgba(155,123,255,0.95));
       box-shadow: 0 12px 30px rgba(105,167,255,0.28);
     }
-    .nav-links {
-      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-    }
+    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .nav-links a {
       color: var(--muted); padding: 10px 14px; border-radius: 999px;
       transition: 0.25s ease; border: 1px solid transparent;
@@ -106,9 +103,8 @@
       color: var(--text); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08);
     }
     .menu-btn {
-      display: none;
-      width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.10); border-radius: 14px;
-      background: rgba(255,255,255,0.05); color: var(--text);
+      display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px; background: rgba(255,255,255,0.05); color: var(--text);
     }
 
     .hero {
@@ -135,11 +131,8 @@
       letter-spacing: -0.06em;
     }
     .hero-copy {
-      margin-top: 18px;
-      max-width: 640px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.9;
+      margin-top: 18px; max-width: 660px; color: var(--muted);
+      font-size: 1.05rem; line-height: 1.9;
     }
 
     .typing {
@@ -175,51 +168,50 @@
     .btn.secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
 
     .hero-panel {
-      position: relative;
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
       border: 1px solid rgba(255,255,255,0.10); border-radius: var(--radius-xl);
-      padding: 22px; box-shadow: var(--shadow); overflow: hidden;
+      padding: 24px; box-shadow: var(--shadow); overflow: hidden;
+      position: relative;
     }
     .hero-panel::before {
-      content: ""; position: absolute; inset: -40% -20% auto auto; width: 240px; height: 240px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(105,167,255,0.20), transparent 70%);
-      filter: blur(12px);
+      content: ""; position: absolute; inset: -20% -20% auto auto; width: 260px; height: 260px;
+      border-radius: 50%; background: radial-gradient(circle, rgba(105,167,255,0.18), transparent 72%); filter: blur(10px);
     }
-    .portrait {
-      aspect-ratio: 4 / 5;
-      border-radius: 26px;
+    .profile-card {
+      min-height: 420px;
+      border-radius: 28px;
+      padding: 24px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.06)),
-        radial-gradient(circle at 30% 20%, rgba(105,167,255,0.34), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(155,123,255,0.30), transparent 28%),
-        linear-gradient(135deg, rgba(15,20,45,0.95), rgba(8,10,22,0.96));
+        radial-gradient(circle at 22% 20%, rgba(105,167,255,0.32), transparent 24%),
+        radial-gradient(circle at 78% 18%, rgba(155,123,255,0.28), transparent 22%),
+        radial-gradient(circle at 50% 66%, rgba(82,224,255,0.10), transparent 28%),
+        linear-gradient(145deg, rgba(12,16,31,0.98), rgba(6,9,20,0.98));
       border: 1px solid rgba(255,255,255,0.10);
-      position: relative;
-      overflow: hidden;
-      display: grid; place-items: end start;
-      padding: 18px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      gap: 18px;
     }
-    .portrait .chip {
-      position: absolute; inset: auto 16px 16px 16px;
-      padding: 14px 16px; border-radius: 18px; background: rgba(5,8,22,0.55); border: 1px solid rgba(255,255,255,0.10);
-      backdrop-filter: blur(10px);
+    .profile-title {
+      font-size: 1.05rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(245,247,255,0.78);
     }
-    .portrait .title { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-    .portrait .sub { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
-    .portrait .silhouette {
-      width: 100%; height: 100%;
-      background:
-        radial-gradient(circle at 52% 28%, rgba(255,255,255,0.92) 0 6%, transparent 6.5%),
-        radial-gradient(circle at 50% 40%, rgba(105,167,255,0.28) 0 14%, transparent 14.5%),
-        radial-gradient(circle at 50% 61%, rgba(155,123,255,0.22) 0 18%, transparent 18.5%),
-        radial-gradient(circle at 50% 82%, rgba(255,255,255,0.08) 0 30%, transparent 30.5%);
-      opacity: 0.52;
-      mix-blend-mode: screen;
-      filter: blur(0.3px);
+    .profile-sub {
+      color: var(--muted); line-height: 1.8; max-width: 36ch;
     }
+    .profile-block {
+      padding: 16px; border-radius: 18px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .profile-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    }
+    .profile-chip {
+      padding: 12px 14px; border-radius: 16px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      line-height: 1.5;
+    }
+    .profile-chip strong { display: block; margin-bottom: 4px; }
 
     .mini-stats {
-      margin-top: 18px;
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
     }
     .stat {
@@ -230,20 +222,16 @@
     .stat strong { display: block; font-size: 1.3rem; margin-bottom: 5px; }
     .stat span { color: var(--muted); font-size: 0.92rem; line-height: 1.4; }
 
-    .section {
-      padding: 40px 0 18px;
-    }
+    .section { padding: 40px 0 18px; }
     .section-head {
       display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 20px;
     }
     h2 {
       margin: 0; font-size: clamp(1.7rem, 3vw, 2.6rem); letter-spacing: -0.04em; line-height: 1.05;
     }
-    .section p.lead { margin: 8px 0 0; color: var(--muted); max-width: 720px; line-height: 1.8; }
+    .section p.lead { margin: 8px 0 0; color: var(--muted); max-width: 760px; line-height: 1.8; }
 
-    .grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .card {
       position: relative; overflow: hidden;
       background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
@@ -257,8 +245,7 @@
     .card::before {
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
-      transform: translateX(-100%);
-      transition: transform 0.7s ease;
+      transform: translateX(-100%); transition: transform 0.7s ease;
     }
     .card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.16); }
     .card:hover::before { transform: translateX(100%); }
@@ -273,25 +260,16 @@
     }
     .pill strong { color: var(--text); }
 
-    .split {
-      display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 16px;
-    }
-
-    .story {
-      display: grid; gap: 16px;
-    }
+    .split { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 16px; }
+    .story { display: grid; gap: 16px; }
     .quote {
-      font-size: 1.25rem; line-height: 1.8; color: var(--text);
+      font-size: 1.22rem; line-height: 1.85; color: var(--text);
     }
     .quote span {
       background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
       -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700;
     }
-
-    .timeline {
-      display: grid; gap: 14px; position: relative;
-      margin-left: 14px;
-    }
+    .timeline { display: grid; gap: 14px; position: relative; margin-left: 14px; }
     .timeline::before {
       content: ""; position: absolute; left: 13px; top: 0; bottom: 0; width: 2px;
       background: linear-gradient(180deg, rgba(105,167,255,0.25), rgba(155,123,255,0.55), rgba(82,224,255,0.18));
@@ -308,12 +286,7 @@
     .step h3 { margin: 0 0 6px; font-size: 1.02rem; }
     .step p { margin: 0; color: var(--muted); line-height: 1.75; }
 
-    .stats {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
-    }
-    .big-stat {
-      text-align: left;
-    }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .big-stat .num {
       font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.05em;
       background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
@@ -321,9 +294,7 @@
     }
     .big-stat .label { margin-top: 4px; color: var(--muted); line-height: 1.5; }
 
-    .filters {
-      display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 22px;
-    }
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 22px; }
     .filter-btn {
       padding: 10px 14px; border-radius: 999px; cursor: pointer;
       background: rgba(255,255,255,0.04); color: var(--muted);
@@ -334,12 +305,10 @@
 
     .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .project {
-      grid-column: span 4;
-      min-height: 290px;
-      display: flex; flex-direction: column; justify-content: space-between;
+      grid-column: span 4; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;
       cursor: pointer;
     }
-    .project.featured { grid-column: span 8; min-height: 330px; }
+    .project.featured { grid-column: span 8; min-height: 290px; }
     .project-top { display: flex; align-items: start; justify-content: space-between; gap: 14px; }
     .project h3 { margin: 0; font-size: 1.15rem; }
     .project .desc { margin: 10px 0 0; color: var(--muted); line-height: 1.8; }
@@ -355,30 +324,17 @@
       background: rgba(255,255,255,0.05); color: var(--text); cursor: pointer;
     }
 
-    .visual {
-      height: 150px; border-radius: 18px; margin-top: 18px; overflow: hidden;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(105,167,255,0.42), transparent 25%),
-        radial-gradient(circle at 72% 35%, rgba(155,123,255,0.38), transparent 22%),
-        radial-gradient(circle at 45% 70%, rgba(82,224,255,0.18), transparent 26%),
-        linear-gradient(135deg, rgba(14,18,38,0.95), rgba(6,8,18,0.95));
-      border: 1px solid rgba(255,255,255,0.08);
-      position: relative;
+    .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .work-card { grid-column: span 4; }
+    .work-card .meta {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
     }
-    .visual::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(120deg, transparent 15%, rgba(255,255,255,0.08) 50%, transparent 85%);
-      transform: translateX(-70%);
-      animation: sweep 6s ease-in-out infinite;
-    }
-    @keyframes sweep {
-      0%, 100% { transform: translateX(-70%); opacity: 0.7; }
-      50% { transform: translateX(70%); opacity: 1; }
+    .work-card .meta span {
+      padding: 7px 10px; border-radius: 999px; font-size: 0.82rem;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: var(--muted);
     }
 
-    .skill-grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
-    }
+    .skill-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .skill-group { grid-column: span 6; }
     .skill-head {
       display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
@@ -390,50 +346,32 @@
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
     }
     .skill-row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
-    .skill-bar {
-      height: 10px; border-radius: 999px; background: rgba(255,255,255,0.07); overflow: hidden;
-    }
+    .skill-bar { height: 10px; border-radius: 999px; background: rgba(255,255,255,0.07); overflow: hidden; }
     .skill-bar span {
       display: block; height: 100%; border-radius: inherit;
       background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
     }
 
-    .masonry {
-      columns: 3 250px;
-      gap: 16px;
-    }
+    .masonry { columns: 3 250px; gap: 16px; }
     .masonry .tile {
       display: inline-block; width: 100%; margin: 0 0 16px;
       padding: 18px; border-radius: 20px;
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
       break-inside: avoid;
     }
-    .tile .img {
-      height: 160px; border-radius: 16px; margin-bottom: 14px;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(105,167,255,0.34), transparent 28%),
-        radial-gradient(circle at 75% 25%, rgba(155,123,255,0.32), transparent 24%),
-        linear-gradient(135deg, rgba(18,22,40,0.95), rgba(10,12,24,0.96));
-      border: 1px solid rgba(255,255,255,0.08);
-      position: relative; overflow: hidden;
-    }
-    .tile .img::before {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(110deg, transparent 18%, rgba(255,255,255,0.12) 50%, transparent 80%);
-      transform: translateX(-80%); animation: sweep 5.2s ease-in-out infinite;
+    .tile .bars { display: grid; gap: 10px; margin-top: 14px; }
+    .tile .bars span {
+      display: block; height: 10px; border-radius: 999px;
+      background: linear-gradient(90deg, rgba(105,167,255,0.8), rgba(155,123,255,0.8));
     }
 
     .contact-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .contact-card { grid-column: span 3; }
-    .contact-card .value {
-      margin-top: 8px; font-size: 1.02rem; word-break: break-word;
-    }
+    .contact-card .value { margin-top: 8px; font-size: 1.02rem; word-break: break-word; }
 
     .footer {
-      padding: 38px 0 54px;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin-top: 36px;
+      padding: 38px 0 54px; color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08); margin-top: 36px;
     }
     .footer-inner {
       display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
@@ -451,13 +389,8 @@
     }
     .top-btn.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
-    .mobile-panel {
-      display: none;
-      padding: 0 0 16px;
-    }
-    .mobile-links {
-      display: grid; gap: 10px; padding: 10px 0 0;
-    }
+    .mobile-panel { display: none; padding: 0 0 16px; }
+    .mobile-links { display: grid; gap: 10px; padding: 10px 0 0; }
     .mobile-links a {
       padding: 14px 16px; border-radius: 16px;
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
@@ -474,20 +407,18 @@
       width: min(760px, 100%);
       background: linear-gradient(180deg, rgba(11,15,31,0.98), rgba(8,10,22,0.98));
       border: 1px solid rgba(255,255,255,0.10); border-radius: 28px; box-shadow: var(--shadow);
-      padding: 24px;
-      max-height: min(82vh, 860px); overflow: auto;
+      padding: 24px; max-height: min(82vh, 860px); overflow: auto;
     }
     .modal-head { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
     .close {
       border: 0; width: 42px; height: 42px; border-radius: 999px; cursor: pointer;
       background: rgba(255,255,255,0.06); color: var(--text);
     }
-    .modal .visual { height: 220px; margin-top: 18px; }
     .modal p { color: var(--muted); line-height: 1.8; }
 
     @media (max-width: 980px) {
       .hero-grid, .split { grid-template-columns: 1fr; }
-      .project, .project.featured, .skill-group, .contact-card { grid-column: span 12; }
+      .project, .project.featured, .skill-group, .work-card, .contact-card { grid-column: span 12; }
       .stats { grid-template-columns: repeat(2, 1fr); }
       .nav-links { display: none; }
       .menu-btn { display: inline-grid; place-items: center; }
@@ -501,7 +432,7 @@
       .mini-stats { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr; }
       .section-head { align-items: start; flex-direction: column; }
-      .portrait { aspect-ratio: 1 / 1.1; }
+      .profile-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -553,7 +484,7 @@
           <div class="typing"><span id="typed"></span><span class="caret"></span></div>
           <p class="hero-copy">
             I am Billy Li — a student who cares about solving difficult problems, learning deeply, and turning ideas into meaningful work.
-            My path combines competitive programming, artificial intelligence, research, writing, photography, and athletics into one clear story:
+            My path combines competitive programming, artificial intelligence, research, writing, photography, athletics, and project building into one clear story:
             learn, build, improve, and repeat.
           </p>
           <div class="hero-actions">
@@ -573,11 +504,23 @@
         </div>
 
         <aside class="hero-panel reveal show">
-          <div class="portrait" aria-hidden="true">
-            <div class="silhouette"></div>
-            <div class="chip">
-              <div class="title">Billy Li</div>
-              <div class="sub">Student • Programmer • Researcher • Builder<br/>A portfolio designed to show depth, not just labels.</div>
+          <div class="profile-card">
+            <div>
+              <div class="profile-title">Billy Li</div>
+              <p class="profile-sub">A portfolio designed to show depth, not just labels. Built to help admissions readers immediately understand who I am and what drives me.</p>
+            </div>
+            <div class="profile-block">
+              <strong>Core identity</strong>
+              <p class="muted" style="margin: 8px 0 0; line-height: 1.8;">
+                Student • Programmer • Researcher • Builder<br />
+                Focused on thoughtful work, strong execution, and long-term growth.
+              </p>
+            </div>
+            <div class="profile-grid">
+              <div class="profile-chip"><strong>Programming</strong>Competitive contests, algorithms, and implementation.</div>
+              <div class="profile-chip"><strong>Research</strong>AI, LLMs, and educational technology.</div>
+              <div class="profile-chip"><strong>Creative work</strong>Photography, visual storytelling, and media.</div>
+              <div class="profile-chip"><strong>Athletics</strong>Golf and discipline through training.</div>
             </div>
           </div>
         </aside>
@@ -589,16 +532,17 @@
         <div class="section-head">
           <div>
             <h2>About me</h2>
-            <p class="lead">Not a generic self-introduction — this section is meant to show how your interests connect into a serious academic profile.</p>
+            <p class="lead">This page is meant to feel like a real applicant profile: technical, serious, and specific.</p>
           </div>
         </div>
 
         <div class="grid">
           <div class="card" style="grid-column: span 7;">
             <h3>My academic direction</h3>
-            <p class="muted">
-              I am most interested in computer science because it lets me combine logic, creativity, and systems thinking.
-              Competitive programming taught me how to think precisely; AI taught me how to think at scale; research taught me how to ask better questions.
+            <p class="muted" style="line-height:1.9;">
+              I am most interested in computer science because it combines logic, creativity, and systems thinking.
+              Competitive programming trained me to think precisely; AI taught me how to think at scale; research taught me how to ask better questions.
+              The best projects, to me, are the ones that are both technically strong and genuinely useful.
             </p>
             <div class="pill-row">
               <span class="pill">Algorithms</span>
@@ -610,9 +554,9 @@
           </div>
           <div class="card" style="grid-column: span 5;">
             <h3>What I care about</h3>
-            <p class="muted" style="line-height:1.85">
-              I like work that has structure, proof, and purpose. I am drawn to projects where design and rigor meet:
-              educational tools, algorithm systems, AI experiments, and visual explanations that make hard things easier to understand.
+            <p class="muted" style="line-height:1.9;">
+              I care about structure, proof, and purpose. I am drawn to work where design and rigor meet: educational tools, algorithm systems,
+              AI experiments, and visual explanations that make difficult ideas easier to understand.
             </p>
           </div>
         </div>
@@ -624,7 +568,7 @@
         <div class="section-head">
           <div>
             <h2>Story and timeline</h2>
-            <p class="lead">This makes the website feel like a narrative instead of a list of facts.</p>
+            <p class="lead">The strongest portfolios feel like a story that keeps moving forward.</p>
           </div>
         </div>
         <div class="split">
@@ -634,14 +578,14 @@
               I keep learning, keep improving, and keep turning knowledge into something visible.
             </div>
             <div class="card" style="background: rgba(255,255,255,0.04);">
-              <strong>What the admissions reader should feel:</strong>
-              <p class="muted">disciplined, technical, curious, self-motivated, and capable of depth.</p>
+              <strong>What the admissions reader should feel</strong>
+              <p class="muted" style="margin: 8px 0 0; line-height:1.8;">disciplined, technical, curious, self-motivated, and capable of depth.</p>
             </div>
           </div>
           <div class="timeline">
             <div class="step">
               <h3>Grade 3 — First programming exposure</h3>
-              <p>Started learning coding very early, which created a long runway for problem-solving habits and persistence.</p>
+              <p>Started learning coding very early, creating a long runway for problem-solving habits and persistence.</p>
             </div>
             <div class="step">
               <h3>Middle school — Competitive programming foundation</h3>
@@ -665,7 +609,7 @@
         <div class="section-head">
           <div>
             <h2>Highlights</h2>
-            <p class="lead">These numbers should be concrete and feel earned. Replace any placeholder with your exact data later.</p>
+            <p class="lead">Use concrete numbers where possible. They help the page feel real.</p>
           </div>
         </div>
         <div class="stats">
@@ -682,7 +626,7 @@
         <div class="section-head">
           <div>
             <h2>Projects</h2>
-            <p class="lead">This is where the site should stop feeling like a resume and start feeling like proof of ability.</p>
+            <p class="lead">No empty image boxes. Instead, each project explains the idea, the challenge, and the value.</p>
           </div>
         </div>
 
@@ -705,9 +649,8 @@
                 </div>
                 <span class="tag highlight">Featured</span>
               </div>
-              <div class="visual"></div>
-              <div class="tag-row">
-                <span class="tag">NLP</span><span class="tag">LLMs</span><span class="tag">Research workflow</span><span class="tag">Product design</span>
+              <div class="pill-row">
+                <span class="pill">NLP</span><span class="pill">LLMs</span><span class="pill">Research workflow</span><span class="pill">Product design</span>
               </div>
             </div>
             <div class="project-footer">
@@ -720,36 +663,31 @@
           <article class="card project reveal" data-tags="algorithms education" tabindex="0" data-title="Algorithm Visualizer">
             <h3>Algorithm Visualizer</h3>
             <p class="desc">Visual explanations for sorting, graph traversal, dynamic programming states, and complexity growth.</p>
-            <div class="visual"></div>
-            <div class="tag-row"><span class="tag">C++</span><span class="tag">Data structures</span><span class="tag">Interactive learning</span></div>
+            <div class="pill-row"><span class="pill">C++</span><span class="pill">Data structures</span><span class="pill">Interactive learning</span></div>
           </article>
 
           <article class="card project reveal" data-tags="education creative" tabindex="0" data-title="Educational Platform">
             <h3>Educational Platform</h3>
             <p class="desc">A student-facing learning space designed to make study guides, practice, and feedback more structured.</p>
-            <div class="visual"></div>
-            <div class="tag-row"><span class="tag">UX</span><span class="tag">Accessibility</span><span class="tag">Student support</span></div>
+            <div class="pill-row"><span class="pill">UX</span><span class="pill">Accessibility</span><span class="pill">Student support</span></div>
           </article>
 
           <article class="card project reveal" data-tags="algorithms research" tabindex="0" data-title="Competitive Programming Toolkit">
             <h3>Competitive Programming Toolkit</h3>
             <p class="desc">Templates, notes, and problem-solving patterns for efficient contest preparation and review.</p>
-            <div class="visual"></div>
-            <div class="tag-row"><span class="tag">CP</span><span class="tag">C++</span><span class="tag">Templates</span></div>
+            <div class="pill-row"><span class="pill">CP</span><span class="pill">C++</span><span class="pill">Templates</span></div>
           </article>
 
           <article class="card project reveal" data-tags="ai research" tabindex="0" data-title="Machine Learning Project">
             <h3>Machine Learning Project</h3>
             <p class="desc">A model-centered project exploring training data, evaluation, and how results change with better features and cleaner design.</p>
-            <div class="visual"></div>
-            <div class="tag-row"><span class="tag">ML</span><span class="tag">Evaluation</span><span class="tag">Analysis</span></div>
+            <div class="pill-row"><span class="pill">ML</span><span class="pill">Evaluation</span><span class="pill">Analysis</span></div>
           </article>
 
           <article class="card project reveal" data-tags="creative research" tabindex="0" data-title="Portfolio Website">
             <h3>Portfolio Website</h3>
             <p class="desc">A polished single-file personal site that presents identity, depth, and seriousness with clarity.</p>
-            <div class="visual"></div>
-            <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <div class="pill-row"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span></div>
           </article>
         </div>
       </div>
@@ -760,40 +698,40 @@
         <div class="section-head">
           <div>
             <h2>Works, writing, and creative evidence</h2>
-            <p class="lead">This section is important because it shows that your profile is broader than coding alone.</p>
+            <p class="lead">This section broadens the profile so it feels multidimensional instead of purely technical.</p>
           </div>
         </div>
 
-        <div class="masonry">
-          <div class="tile">
-            <div class="img"></div>
-            <strong>Research presentation</strong>
+        <div class="work-grid">
+          <div class="card work-card">
+            <h3>Research presentation</h3>
             <p class="muted">A clean slide-based explanation of an AI or academic topic, showing organization and speaking ability.</p>
+            <div class="meta"><span>Presentation</span><span>Academic depth</span><span>Communication</span></div>
           </div>
-          <div class="tile">
-            <div class="img"></div>
-            <strong>Photography / award portfolio</strong>
-            <p class="muted">Use a gallery of your best images, competition photos, or visual work to show composition and eye for detail.</p>
+          <div class="card work-card">
+            <h3>Photography portfolio</h3>
+            <p class="muted">Use your best images, competition photos, or visual work to show composition and eye for detail.</p>
+            <div class="meta"><span>Photography</span><span>Composition</span><span>Creative vision</span></div>
           </div>
-          <div class="tile">
-            <div class="img"></div>
-            <strong>Essay or reflection sample</strong>
+          <div class="card work-card">
+            <h3>Essay or reflection sample</h3>
             <p class="muted">A short excerpt from your writing, especially if it shows maturity, introspection, and precision.</p>
+            <div class="meta"><span>Writing</span><span>Reflection</span><span>Personality</span></div>
           </div>
-          <div class="tile">
-            <div class="img"></div>
-            <strong>Algorithm notebook</strong>
+          <div class="card work-card">
+            <h3>Algorithm notebook</h3>
             <p class="muted">A visual collection of your thinking process: diagrams, state transitions, and complexity notes.</p>
+            <div class="meta"><span>Algorithms</span><span>Notes</span><span>Logic</span></div>
           </div>
-          <div class="tile">
-            <div class="img"></div>
-            <strong>Competition result card</strong>
+          <div class="card work-card">
+            <h3>Competition result card</h3>
             <p class="muted">Display certificates or outcome summaries in a refined style rather than a plain list.</p>
+            <div class="meta"><span>Awards</span><span>Contest</span><span>Evidence</span></div>
           </div>
-          <div class="tile">
-            <div class="img"></div>
-            <strong>Field diversity</strong>
+          <div class="card work-card">
+            <h3>Field diversity</h3>
             <p class="muted">Show golf, photography, and school life to create a more rounded and memorable profile.</p>
+            <div class="meta"><span>Golf</span><span>Photography</span><span>Balance</span></div>
           </div>
         </div>
       </div>
@@ -809,11 +747,11 @@
         </div>
 
         <div class="grid">
-          <div class="card" style="grid-column: span 4;"><h3>Competitive programming</h3><p class="muted">USACO experience and a strong training path in algorithms and problem solving.</p></div>
+          <div class="card" style="grid-column: span 4;"><h3>Competitive programming</h3><p class="muted">USACO training and strong problem-solving development through algorithms and implementation.</p></div>
           <div class="card" style="grid-column: span 4;"><h3>National contest awards</h3><p class="muted">CSP-J and CSP-S national second-prize level results.</p></div>
           <div class="card" style="grid-column: span 4;"><h3>Provincial recognition</h3><p class="muted">Provincial programming award and other performance-based recognition.</p></div>
           <div class="card" style="grid-column: span 4;"><h3>Golf</h3><p class="muted">Provincial-level athletic achievement that adds range and discipline to the profile.</p></div>
-          <div class="card" style="grid-column: span 4;"><h3>Photography</h3><p class="muted">Creative output and visual thinking, useful for showing a different dimension of work.</p></div>
+          <div class="card" style="grid-column: span 4;"><h3>Photography</h3><p class="muted">Creative output and visual thinking that show another dimension of work.</p></div>
           <div class="card" style="grid-column: span 4;"><h3>Research / presentations</h3><p class="muted">School-based presentation work that shows technical communication and academic seriousness.</p></div>
         </div>
       </div>
@@ -872,14 +810,14 @@
         <div class="section-head">
           <div>
             <h2>Contact</h2>
-            <p class="lead">Keep this section polished and simple. Replace placeholders with your final public contact details.</p>
+            <p class="lead">These details are filled in using the information you already shared.</p>
           </div>
         </div>
         <div class="contact-grid">
-          <div class="card contact-card"><strong>Email</strong><div class="value muted">your.email@example.com</div></div>
-          <div class="card contact-card"><strong>GitHub</strong><div class="value muted">github.com/your-username</div></div>
-          <div class="card contact-card"><strong>LinkedIn</strong><div class="value muted">linkedin.com/in/your-name</div></div>
-          <div class="card contact-card"><strong>Website</strong><div class="value muted">yourdomain.com</div></div>
+          <div class="card contact-card"><strong>Email</strong><div class="value muted">lixinji123456@gmail.com</div></div>
+          <div class="card contact-card"><strong>GitHub</strong><div class="value muted">github.com/lixinji123456-bit</div></div>
+          <div class="card contact-card"><strong>Graduate year</strong><div class="value muted">2028</div></div>
+          <div class="card contact-card"><strong>Student email</strong><div class="value muted">Billy.Li28@nflsbca.com</div></div>
         </div>
       </div>
     </section>
@@ -906,7 +844,6 @@
         </div>
         <button class="close" id="closeModal" aria-label="Close dialog">✕</button>
       </div>
-      <div class="visual"></div>
       <p id="modalBody">Select a project card to open a richer explanation of the idea, methods, and impact.</p>
       <div class="pill-row" id="modalTags"></div>
     </div>
@@ -914,14 +851,7 @@
 
   <script>
     const typed = document.getElementById('typed');
-    const typingWords = [
-      'Student',
-      'Programmer',
-      'Researcher',
-      'Builder',
-      'Competitive learner',
-      'Future computer scientist'
-    ];
+    const typingWords = ['Student', 'Programmer', 'Researcher', 'Builder', 'Competitive learner', 'Future computer scientist'];
     let wordIndex = 0, charIndex = 0, deleting = false;
     function typeLoop() {
       const word = typingWords[wordIndex];
@@ -980,7 +910,7 @@
             current = target;
             clearInterval(timer);
           }
-          el.textContent = `${current}${target >= 1000 ? '+' : '+'}`;
+          el.textContent = `${current}+`;
         }, 24);
         countObserver.unobserve(el);
       });
